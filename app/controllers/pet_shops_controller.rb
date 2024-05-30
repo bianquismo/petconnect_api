@@ -49,11 +49,3 @@ class PetShopsController < ApplicationController
     params.require(:pet_shop).permit(:name, :address, :open_hours, :phone_number, :rating, :image)
   end
 end
-
-class PetShop < ApplicationRecord
-  has_one_attached :image
-
-  def image_url
-    Rails.application.routes.url_helpers.url_for(image) if image.attached?
-  end
-end
