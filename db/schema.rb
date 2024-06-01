@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_25_231635) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_31_210759) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,6 +39,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_25_231635) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "appointments", force: :cascade do |t|
+    t.datetime "time"
+    t.integer "user_id", null: false
+    t.integer "pet_shop_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_shop_id"], name: "index_appointments_on_pet_shop_id"
+    t.index ["user_id"], name: "index_appointments_on_user_id"
+  end
+
   create_table "pet_shops", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -49,6 +59,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_25_231635) do
     t.integer "rating"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "appointments", "pet_shops"
+  add_foreign_key "appointments", "users"
 end
