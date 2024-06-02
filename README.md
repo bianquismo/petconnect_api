@@ -1,24 +1,16 @@
-# README
+# Pet Connect - Backend
+Esse é um trabalho acadêmico feito como entrega de P.I. para o tecnólogo de ADS do Senac.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# # Tecnologias Utilizadas:
+- Ruby on Rails
+- SQLite
+- Node.js
+# # Como rodar o projeto:
+1. Faça o clone do repositorio na sua máquina:
+  ```git clone git@github.com:bianquismo/petconnect-frontend.git```
+2. Instale as dependencias na pasta do projeto:
+   ```npm install```
+3. Rode o projeto:
+   ```npm run dev```
+4. Acesse a aplicação:
+   ```http://localhost:3000```
