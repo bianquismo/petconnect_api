@@ -7,10 +7,12 @@ Esse é um trabalho acadêmico feito como entrega de P.I. para o tecnólogo de A
 - Node.js
 # # Como rodar o projeto:
 1. Faça o clone do repositorio na sua máquina:
-  ```git clone git@github.com:bianquismo/petconnect-frontend.git```
+  ```git clone git@github.com:bianquismo/petconnect_api.git```
 2. Instale as dependencias na pasta do projeto:
-   ```npm install```
-3. Rode o projeto:
-   ```npm run dev```
-4. Acesse a aplicação:
-   ```http://localhost:3000```
+   ```bundle install```
+3. Faça as migrações do banco de dados:
+   ```rails db:migrate```
+4. Rode o servidor:
+   ```rails server```
+5. Acesse o healthcheck da API para garantir que o servidor está funcionando:
+   ```http://localhost:8080```
